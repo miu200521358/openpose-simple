@@ -7,21 +7,60 @@ rem ---  カレントディレクトリを実行先に変更
 cd /d %~dp0
 
 rem ---  入力対象映像ファイルパス
-set /P INPUT_VIDEO="入力対象映像ファイルパス: "
-rem --- echo INPUT_VIDEO：%INPUT_VIDEO%
+echo 解析対象となる映像のファイルのフルパスを入力して下さい。
+echo この設定は半角英数字のみ設定可能で、必須項目です。
+set INPUT_VIDEO=
+set /P INPUT_VIDEO=■解析対象映像ファイルパス: 
+rem echo INPUT_VIDEO：%INPUT_VIDEO%
 
-rem ---  JSON出力先ディレクトリパス
-set /P OUTPUT_JSON="JSON出力先ディレクトリパス: "
-rem --- echo OUTPUT_JSON：%OUTPUT_JSON%
-
-rem ---  映像出力先ディレクトリパス
-set /P OUTPUT_VIDEO="映像出力先ファイルパス(.aviまで指定): "
-rem --- echo OUTPUT_VIDEO：%OUTPUT_VIDEO%
+IF /I "%INPUT_VIDEO%" EQU "" (
+    ECHO 解析対象映像ファイルパスが設定されていないため、処理を中断します。
+    EXIT /B
+)
 
 rem ---  映像に映っている最大人数
+
+echo --------------
+echo 映像に映っている最大人数を入力して下さい。
+echo 何も入力せず、ENTERを押下した場合、1人分の解析になります。
+set NUMBER_PEOPLE_MAX=1
 set /P NUMBER_PEOPLE_MAX="映像に映っている最大人数: "
-rem --- echo NUMBER_PEOPLE_MAX：%NUMBER_PEOPLE_MAX%
+
+rem --echo NUMBER_PEOPLE_MAX: %NUMBER_PEOPLE_MAX%
+
+rem -----------------------------------
+rem --- 入力映像パス
+FOR %%1 IN (%INPUT_VIDEO%) DO (
+    rem -- 入力映像パスの親ディレクトリと、ファイル名+_jsonでパス生成
+    set INPUT_VIDEO_DIR=%%~dp1
+    set INPUT_VIDEO_FILENAME=%%~n1
+)
+
+rem -- 実行日付
+set DT=%date%
+rem -- 実行時間
+set TM=%time%
+rem -- 時間の空白を0に置換
+set TM2=%TM: =0%
+rem -- 実行日時をファイル名用に置換
+set DTTM=%dt:~0,4%%dt:~5,2%%dt:~8,2%_%TM2:~0,2%%TM2:~3,2%%TM2:~6,2%
+
+echo --------------
+
+rem ------------------------------------------------
+rem -- JSON出力ディレクトリ
+set OUTPUT_JSON_DIR=%INPUT_VIDEO_DIR%%DTTM%\%INPUT_VIDEO_FILENAME%_json
+rem echo %OUTPUT_JSON_DIR%
+
+rem -- JSON出力ディレクトリ生成
+mkdir %OUTPUT_JSON_DIR%
+echo 解析結果JSONディレクトリ：%OUTPUT_JSON_DIR%
+
+rem ------------------------------------------------
+rem -- 映像出力ディレクトリ
+set OUTPUT_VIDEO_PATH=%INPUT_VIDEO_DIR%%DTTM%\%INPUT_VIDEO_FILENAME%_openpose.avi
+echo 解析結果aviファイル：%OUTPUT_VIDEO_PATH%
 
 rem -- exe実行
-Release\OpenPoseDemo.exe --video %INPUT_VIDEO% --write_json %OUTPUT_JSON% --write_video %OUTPUT_VIDEO% --number_people_max %NUMBER_PEOPLE_MAX%
+Release\OpenPoseDemo.exe --video %INPUT_VIDEO% --write_json %OUTPUT_JSON_DIR% --write_video %OUTPUT_VIDEO_PATH% --number_people_max %NUMBER_PEOPLE_MAX%
 
