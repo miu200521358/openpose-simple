@@ -70,7 +70,18 @@ GNU GPLv3
 
 - クレジットへの記載
     - 記載場所は不問。名前は`miu200521358`でお願いします。
-- ニコニコ動画の場合、コンテンツツリーへの動画\([sm33161300](http://www.nicovideo.jp/watch/sm33161300)\)登録
+- ニコニコ動画の場合、コンテンツツリーへの動画\([sm33217872](http://www.nicovideo.jp/watch/sm33217872)\)登録
+- モーションを配布する場合、以下を同梱してください (記載場所不問)
+
+```
+LICENCE
+
+モーショントレース自動化キット
+【Openpose】：CMU　…　https://github.com/CMU-Perceptual-Computing-Lab/openpose
+【起動バッチ】：miu200521358　…　https://github.com/miu200521358/openpose-simple
+【Openpose→3D変換】：una-dinosauria, ArashHosseini, miu200521358　…　https://github.com/miu200521358/3d-pose-baseline-vmd
+【3D→VMD変換】： errno-mmd, miu200521358 　…　https://github.com/miu200521358/VMD-3d-pose-baseline-multi
+```
 
 以下の行為はご遠慮願います
 
