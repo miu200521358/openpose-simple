@@ -8,6 +8,7 @@ cd /d %~dp0
 
 rem ---  入力対象映像ファイルパス
 echo 解析対象となる映像のファイルのフルパスを入力して下さい。
+echo 1フレーム目に必ず人物が映っている事を確認してください。（映ってないと次でコケます）
 echo この設定は半角英数字のみ設定可能で、必須項目です。
 set INPUT_VIDEO=
 set /P INPUT_VIDEO=■解析対象映像ファイルパス: 
@@ -23,6 +24,7 @@ rem ---  映像に映っている最大人数
 echo --------------
 echo 映像に映っている最大人数を入力して下さい。
 echo 何も入力せず、ENTERを押下した場合、1人分の解析になります。
+echo 複数人数が同程度の大きさで映っている映像で1人だけ指定した場合、解析対象が飛ぶ場合があります。
 set NUMBER_PEOPLE_MAX=1
 set /P NUMBER_PEOPLE_MAX="映像に映っている最大人数: "
 
@@ -61,6 +63,17 @@ rem -- 映像出力ディレクトリ
 set OUTPUT_VIDEO_PATH=%INPUT_VIDEO_DIR%%INPUT_VIDEO_FILENAME%_%DTTM%\%INPUT_VIDEO_FILENAME%_openpose.avi
 echo 解析結果aviファイル：%OUTPUT_VIDEO_PATH%
 
+echo --------------
+echo Openpose解析を開始します。
+echo 解析を中断したい場合、ESCキーを押下して下さい。
+echo --------------
+
 rem -- exe実行
 Release\OpenPoseDemo.exe --video %INPUT_VIDEO% --write_json %OUTPUT_JSON_DIR% --write_video %OUTPUT_VIDEO_PATH% --number_people_max %NUMBER_PEOPLE_MAX%
+
+echo --------------
+echo Done!!
+echo Openpose解析が終わりました。
+echo 3d-pose-baseline-vmd で指定するJSONディレクトリフルパスは以下になります。
+echo %OUTPUT_JSON_DIR%
 
