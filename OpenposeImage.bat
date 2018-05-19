@@ -1,6 +1,6 @@
 @echo off
 rem --- 
-rem ---  OpenPose の jsonデータから 3Dデータに変換
+rem ---  画像データから Openpose骨格データに変換
 rem --- 
 
 rem ---  カレントディレクトリを実行先に変更

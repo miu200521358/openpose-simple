@@ -1,6 +1,6 @@
 @echo off
 rem --- 
-rem ---  OpenPose の jsonデータから 3Dデータに変換
+rem ---  映像データから Openpose骨格データに変換
 rem --- 
 
 rem ---  カレントディレクトリを実行先に変更
@@ -49,7 +49,7 @@ echo --------------
 
 rem ------------------------------------------------
 rem -- JSON出力ディレクトリ
-set OUTPUT_JSON_DIR=%INPUT_VIDEO_DIR%%DTTM%\%INPUT_VIDEO_FILENAME%_json
+set OUTPUT_JSON_DIR=%INPUT_VIDEO_DIR%%INPUT_VIDEO_FILENAME%_%DTTM%\%INPUT_VIDEO_FILENAME%_json
 rem echo %OUTPUT_JSON_DIR%
 
 rem -- JSON出力ディレクトリ生成
@@ -58,7 +58,7 @@ echo 解析結果JSONディレクトリ：%OUTPUT_JSON_DIR%
 
 rem ------------------------------------------------
 rem -- 映像出力ディレクトリ
-set OUTPUT_VIDEO_PATH=%INPUT_VIDEO_DIR%%DTTM%\%INPUT_VIDEO_FILENAME%_openpose.avi
+set OUTPUT_VIDEO_PATH=%INPUT_VIDEO_DIR%%INPUT_VIDEO_FILENAME%_%DTTM%\%INPUT_VIDEO_FILENAME%_openpose.avi
 echo 解析結果aviファイル：%OUTPUT_VIDEO_PATH%
 
 rem -- exe実行
