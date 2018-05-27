@@ -62,26 +62,33 @@ GNU GPLv3
 以下の行為は自由に行って下さい
 
 - モーションの調整・改変
-- ニコニコ動画やTwitter等へのモーション投稿
-- このツールを使用したモーションの不特定多数への配布
-    - ただし、必ず踊り手様や権利者様に失礼のない形に調整してください
+- ニコニコ動画やTwitter等へのモーション使用動画投稿
+- モーションの不特定多数への配布
+    - **必ず踊り手様や各権利者様に失礼のない形に調整してください**
 
 以下の行為は必ず行って下さい。ご協力よろしくお願いいたします。
 
-- クレジットへの記載
-    - 記載場所は不問。名前は`miu200521358`でお願いします。
-- ニコニコ動画の場合、コンテンツツリーへの動画\([sm33217872](http://www.nicovideo.jp/watch/sm33217872)\)登録
-- モーションを配布する場合、以下を同梱してください (記載場所不問)
+- クレジットへの記載を、テキストで検索できる形で記載お願いします。
+
+```
+ツール名：モーショントレース自動化キット
+権利者名：miu200521358
+```
+
+- モーションを配布する場合、以下ライセンスを同梱してください。 (記載場所不問)
 
 ```
 LICENCE
 
 モーショントレース自動化キット
 【Openpose】：CMU　…　https://github.com/CMU-Perceptual-Computing-Lab/openpose
-【起動バッチ】：miu200521358　…　https://github.com/miu200521358/openpose-simple
+【Openpose起動バッチ】：miu200521358　…　https://github.com/miu200521358/openpose-simple
 【Openpose→3D変換】：una-dinosauria, ArashHosseini, miu200521358　…　https://github.com/miu200521358/3d-pose-baseline-vmd
 【3D→VMD変換】： errno-mmd, miu200521358 　…　https://github.com/miu200521358/VMD-3d-pose-baseline-multi
 ```
+
+- ニコニコ動画の場合、コンテンツツリーへ動画\([sm33272961](http://www.nicovideo.jp/watch/sm33272961)\)を登録してください。
+    - コンテンツツリーに登録していただける場合、テキストでのクレジット有無は問いません。
 
 以下の行為はご遠慮願います
 
