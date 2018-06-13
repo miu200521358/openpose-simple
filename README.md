@@ -20,9 +20,9 @@
 
 ### 映像の場合
 
-1. `Openpose`の実行ディレクトリ(`bin`とかの一個上) に[OpenposeVideo.bat](OpenposeVideo.bat) をコピーする
-    - デモ版： `LICENSE`のファイルがある階層。
-    - 自力ビルド版：`x64`のディレクトリの下。
+1. `Openpose`の実行ディレクトリ(`bin`とかの一個上) に簡易起動バッチをコピーする
+    - デモ版： `LICENSE`のファイルがある階層に、[PortableDemo用/OpenposeVideo.bat](PortableDemo用/OpenposeVideo.bat) をコピー
+    - 自力ビルド版：`x64`のディレクトリの下に、[OpenposeVideo.bat](OpenposeVideo.bat) をコピーする
 1. [OpenposeVideo.bat](OpenposeVideo.bat) を実行する
 1. `解析対象映像ファイルパス` が聞かれるので、動画のファイルフルパスを入力する
 1. `映像に映っている最大人数` が聞かれるので、映像から読み取りたい最大人数を1始まりで指定する
@@ -36,9 +36,9 @@
 
 ### 画像の場合
 
-1. `Openpose`の実行ディレクトリ(`bin`とかの一個上) に[OpenposeImage.bat](OpenposeImage.bat) をコピーする
-    - デモ版： `LICENSE`のファイルがある階層。
-    - 自力ビルド版：`x64`のディレクトリの下。
+1. `Openpose`の実行ディレクトリ(`bin`とかの一個上) に簡易起動バッチをコピーする
+    - デモ版： `LICENSE`のファイルがある階層に、[PortableDemo用/OpenposeImage.bat](PortableDemo用/OpenposeImage.bat) をコピー
+    - 自力ビルド版：`x64`のディレクトリの下に、[OpenposeImage.bat](OpenposeImage.bat) をコピーする
 1. [OpenposeImage.bat](OpenposeImage.bat) を実行する
 1. `解析対象画像ディレクトリパス` が聞かれるので、画像が置かれているディレクトリのフルパスを入力する
     - ディレクトリ内には複数枚の画像を置ける
