@@ -89,7 +89,7 @@ LICENCE
 【3D→VMD変換】： errno-mmd, miu200521358 　…　https://github.com/miu200521358/VMD-3d-pose-baseline-multi
 ```
 
-- ニコニコ動画の場合、コンテンツツリーへ動画\([sm33272961](http://www.nicovideo.jp/watch/sm33272961)\)を登録してください。
+- ニコニコ動画の場合、コンテンツツリーへ [トレース自動化マイリスト](https://www.nicovideo.jp/mylist/61943776) の最新版動画を登録してください。
     - コンテンツツリーに登録していただける場合、テキストでのクレジット有無は問いません。
 
 以下の行為はご遠慮願います
