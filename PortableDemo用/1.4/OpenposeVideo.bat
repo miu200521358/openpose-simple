@@ -19,6 +19,16 @@ IF /I "%INPUT_VIDEO%" EQU "" (
     EXIT /B
 )
 
+rem ---  解析を開始するフレーム
+
+echo --------------
+echo 解析を開始するフレームNoを入力して下さい。(0始まり)
+echo 最初にロゴが表示されている等、人体が正確にトレースできない場合に、
+echo 冒頭のフレームをスキップできます。
+echo 何も入力せず、ENTERを押下した場合、0F目からの解析になります。
+set FRAME_FIRST=0
+set /P FRAME_FIRST="解析開始フレームNo: "
+
 rem ---  映像に映っている最大人数
 
 echo --------------
@@ -69,7 +79,7 @@ echo 解析を中断したい場合、ESCキーを押下して下さい。
 echo --------------
 
 rem -- exe実行
-bin\OpenPoseDemo.exe --video %INPUT_VIDEO% --model_pose COCO --write_json %OUTPUT_JSON_DIR% --write_video %OUTPUT_VIDEO_PATH% --number_people_max %NUMBER_PEOPLE_MAX% 
+bin\OpenPoseDemo.exe --video %INPUT_VIDEO% --model_pose COCO --write_json %OUTPUT_JSON_DIR% --write_video %OUTPUT_VIDEO_PATH% --number_people_max %NUMBER_PEOPLE_MAX% --frame_first %FRAME_FIRST%
 
 echo --------------
 echo Done!!
