@@ -26,7 +26,7 @@ echo 画像に映っている最大人数を入力して下さい。
 echo 何も入力せず、ENTERを押下した場合、1人分の解析になります。
 echo 複数人数が同程度の大きさで映っている映像で1人だけ指定した場合、解析対象が飛ぶ場合があります。
 set NUMBER_PEOPLE_MAX=1
-set /P NUMBER_PEOPLE_MAX="画像に映っている最大人数: "
+set /P NUMBER_PEOPLE_MAX="■画像に映っている最大人数: "
 
 rem --echo NUMBER_PEOPLE_MAX: %NUMBER_PEOPLE_MAX%
 
@@ -68,11 +68,11 @@ echo Openpose解析を開始します。
 echo 解析を中断したい場合、ESCキーを押下して下さい。
 
 rem -- exe実行
-bin\OpenPoseDemo.exe --image_dir %INPUT_IMAGE_DIR% --write_json %OUTPUT_JSON_DIR% --write_images %OUTPUT_IMAGE_PATH% --number_people_max %NUMBER_PEOPLE_MAX%
+bin\OpenPoseDemo.exe --image_dir %INPUT_IMAGE_DIR% --model_pose COCO --write_json %OUTPUT_JSON_DIR% --write_images %OUTPUT_IMAGE_PATH% --number_people_max %NUMBER_PEOPLE_MAX%
 
 echo --------------
 echo Done!!
 echo Openpose解析が終わりました。
-echo 3d-pose-baseline-vmd で指定するJSONディレクトリフルパスは以下になります。
+echo ※画像解析結果は3d-pose-baseline-vmd 以降には適用できません。
 echo %OUTPUT_JSON_DIR%
 
