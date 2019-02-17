@@ -85,7 +85,7 @@ GNU GPLv3
 - クレジットへの記載を、テキストで検索できる形で記載お願いします。
 
 ```
-ツール名：モーショントレース自動化キット
+ツール名：MMDモーショントレース自動化キット
 権利者名：miu200521358
 ```
 
@@ -94,7 +94,7 @@ GNU GPLv3
 ```
 LICENCE
 
-モーショントレース自動化キット
+MMDモーショントレース自動化キット
 【Openpose】：CMU　…　https://github.com/CMU-Perceptual-Computing-Lab/openpose
 【Openpose起動バッチ】：miu200521358　…　https://github.com/miu200521358/openpose-simple
 【Openpose→3D変換】：una-dinosauria, ArashHosseini, miu200521358　…　https://github.com/miu200521358/3d-pose-baseline-vmd
