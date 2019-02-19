@@ -51,7 +51,7 @@ echo --------------
 
 rem ------------------------------------------------
 rem -- JSON出力ディレクトリ
-set OUTPUT_JSON_DIR=%INPUT_IMAGE_DIR_PARENT%%DTTM%\%INPUT_IMAGE_DIRNAME%_json
+set OUTPUT_JSON_DIR=%INPUT_IMAGE_DIR_PARENT%%INPUT_IMAGE_DIRNAME%_%DTTM%\%INPUT_IMAGE_DIRNAME%_json
 rem echo %OUTPUT_JSON_DIR%
 
 rem -- JSON出力ディレクトリ生成
@@ -60,7 +60,7 @@ echo 解析結果JSONディレクトリ：%OUTPUT_JSON_DIR%
 
 rem ------------------------------------------------
 rem -- 画像出力ディレクトリ
-set OUTPUT_IMAGE_PATH=%INPUT_IMAGE_DIR_PARENT%%DTTM%\%INPUT_IMAGE_DIRNAME%_openpose.png
+set OUTPUT_IMAGE_PATH=%INPUT_IMAGE_DIR_PARENT%%INPUT_IMAGE_DIRNAME%_%DTTM%\%INPUT_IMAGE_DIRNAME%_openpose
 echo 解析結果pngファイル：%OUTPUT_IMAGE_PATH%
 
 echo --------------
@@ -73,6 +73,6 @@ bin\OpenPoseDemo.exe --image_dir %INPUT_IMAGE_DIR% --model_pose COCO --write_jso
 echo --------------
 echo Done!!
 echo Openpose解析が終わりました。
-echo ※画像解析結果は3d-pose-baseline-vmd 以降には適用できません。
+echo ※画像解析結果はFCRN-DepthPrediction-vmd 以降には適用できません。
 echo %OUTPUT_JSON_DIR%
 
